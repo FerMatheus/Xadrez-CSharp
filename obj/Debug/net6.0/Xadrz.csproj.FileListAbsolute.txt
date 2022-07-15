@@ -1,0 +1,15 @@
+/home/matheus/Programming/CSharp/Xadrez/bin/Debug/net6.0/Xadrz
+/home/matheus/Programming/CSharp/Xadrez/bin/Debug/net6.0/Xadrz.deps.json
+/home/matheus/Programming/CSharp/Xadrez/bin/Debug/net6.0/Xadrz.runtimeconfig.json
+/home/matheus/Programming/CSharp/Xadrez/bin/Debug/net6.0/Xadrz.dll
+/home/matheus/Programming/CSharp/Xadrez/bin/Debug/net6.0/ref/Xadrz.dll
+/home/matheus/Programming/CSharp/Xadrez/bin/Debug/net6.0/Xadrz.pdb
+/home/matheus/Programming/CSharp/Xadrez/obj/Debug/net6.0/Xadrz.csproj.AssemblyReference.cache
+/home/matheus/Programming/CSharp/Xadrez/obj/Debug/net6.0/Xadrz.GeneratedMSBuildEditorConfig.editorconfig
+/home/matheus/Programming/CSharp/Xadrez/obj/Debug/net6.0/Xadrz.AssemblyInfoInputs.cache
+/home/matheus/Programming/CSharp/Xadrez/obj/Debug/net6.0/Xadrz.AssemblyInfo.cs
+/home/matheus/Programming/CSharp/Xadrez/obj/Debug/net6.0/Xadrz.csproj.CoreCompileInputs.cache
+/home/matheus/Programming/CSharp/Xadrez/obj/Debug/net6.0/Xadrz.dll
+/home/matheus/Programming/CSharp/Xadrez/obj/Debug/net6.0/ref/Xadrz.dll
+/home/matheus/Programming/CSharp/Xadrez/obj/Debug/net6.0/Xadrz.pdb
+/home/matheus/Programming/CSharp/Xadrez/obj/Debug/net6.0/Xadrz.genruntimeconfig.cache
