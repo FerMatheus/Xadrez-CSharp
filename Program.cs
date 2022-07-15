@@ -6,7 +6,10 @@ public class Program
         Posicao P;
 
         P = new Posicao(3, 4);
-        Console.Write($"Posição: {P}");
+        Console.WriteLine($"Posição: {P}");
 
+        Tabuleiro tab = new(8, 8);
+
+        Tela.imprimirTabuleiro(tab);
     }
 }
