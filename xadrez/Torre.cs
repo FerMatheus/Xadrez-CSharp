@@ -10,8 +10,8 @@ namespace xadrez
 
         private bool PodeMover(Posicao pos)
         {
-            Peca peca = Tab.peca(pos);
-            return peca == null || peca.Cor != this.Cor;
+            Peca Peca = Tab.Peca(pos);
+            return Peca == null || Peca.Cor != this.Cor;
         }
         public override bool[,] MovimentosPossiveis()
         {
@@ -22,7 +22,7 @@ namespace xadrez
             while (Tab.VerificaPosicao(pos) && PodeMover(pos))
             {
                 movimentosPossiveis[pos.Linha, pos.Coluna] = true;
-                if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor) break;
+                if (Tab.Peca(pos) != null && Tab.Peca(pos).Cor != Cor) break;
                 pos.Linha -= 1;
             }
             // Direita
@@ -30,7 +30,7 @@ namespace xadrez
             while (Tab.VerificaPosicao(pos) && PodeMover(pos))
             {
                 movimentosPossiveis[pos.Linha, pos.Coluna] = true;
-                if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor) break;
+                if (Tab.Peca(pos) != null && Tab.Peca(pos).Cor != Cor) break;
                 pos.Coluna += 1;
             }
             // Baixo
@@ -38,7 +38,7 @@ namespace xadrez
             while (Tab.VerificaPosicao(pos) && PodeMover(pos))
             {
                 movimentosPossiveis[pos.Linha, pos.Coluna] = true;
-                if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor) break;
+                if (Tab.Peca(pos) != null && Tab.Peca(pos).Cor != Cor) break;
                 pos.Linha += 1;
             }
             // Direita
@@ -46,7 +46,7 @@ namespace xadrez
             while (Tab.VerificaPosicao(pos) && PodeMover(pos))
             {
                 movimentosPossiveis[pos.Linha, pos.Coluna] = true;
-                if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor) break;
+                if (Tab.Peca(pos) != null && Tab.Peca(pos).Cor != Cor) break;
                 pos.Coluna -= 1;
             }
 

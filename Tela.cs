@@ -10,7 +10,7 @@ class Tela
             Console.Write($"{8 - i} ");
             for (int j = 0; j < tab.Colunas; j++)
             {
-                ImprimirPeca(tab.peca(i, j));
+                ImprimirPeca(tab.Peca(i, j));
             }
             System.Console.WriteLine();
         }
@@ -33,7 +33,7 @@ class Tela
                 {
                     Console.BackgroundColor = fundoOriginal;
                 }
-                ImprimirPeca(tab.peca(i, j));
+                ImprimirPeca(tab.Peca(i, j));
                 Console.BackgroundColor = fundoOriginal;
             }
             System.Console.WriteLine();
