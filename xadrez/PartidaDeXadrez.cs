@@ -20,7 +20,15 @@ namespace xadrez
             Peca p = tab.RetirarPeca(origem);
             if (p == null) throw new TabuleiroException("Não há peça no endereço de origem.");
             p.IncrementarMovimentos();
-            Peca pecaCapturada = tab.RetirarPeca(destino);
+            try
+            {
+                Peca pecaCapturada = tab.RetirarPeca(destino);
+            }
+            catch (TabuleiroException e)
+            {
+                tab.ColocarPeca(p, origem);
+                throw e;
+            }
             tab.ColocarPeca(p, destino);
         }
         private void ColocarPecas()

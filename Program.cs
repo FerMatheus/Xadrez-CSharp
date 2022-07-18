@@ -11,10 +11,14 @@ public class Program
             Console.Clear();
             Tela.imprimirTabuleiro(partida.tab);
 
-            Console.Write("Digite a posição de origem: ");
+            Console.Write("\nDigite a posição de origem: ");
             Posicao origem = Tela.LerPosicao().ToPosicao();
+            bool[,] movimentosPossiveis = partida.tab.peca(origem).MovimentosPossiveis();
 
-            Console.Write("Digite a posição de destino: ");
+            Console.Clear();
+            Tela.imprimirTabuleiro(partida.tab, movimentosPossiveis);
+
+            Console.Write("\nDigite a posição de destino: ");
             Posicao destino = Tela.LerPosicao().ToPosicao();
 
             try
