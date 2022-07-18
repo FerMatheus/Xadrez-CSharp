@@ -6,6 +6,7 @@ namespace xadrez
         public Tabuleiro tab { get; private set; }
         private int turno;
         private Cor jogadorAtual;
+        public bool Terminada { get; private set; }
 
         public PartidaDeXadrez()
         {
@@ -17,6 +18,7 @@ namespace xadrez
         public void ExecutaMovimento(Posicao origem, Posicao destino)
         {
             Peca p = tab.RetirarPeca(origem);
+            if (p == null) throw new TabuleiroException("Não há peça no endereço de origem.");
             p.IncrementarMovimentos();
             Peca pecaCapturada = tab.RetirarPeca(destino);
             tab.ColocarPeca(p, destino);

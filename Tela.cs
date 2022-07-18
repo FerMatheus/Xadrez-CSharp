@@ -1,4 +1,5 @@
 using tabuleiro;
+using xadrez;
 
 class Tela
 {
@@ -36,5 +37,12 @@ class Tela
             Console.Write($"{peca} ");
             Console.ForegroundColor = aux;
         }
+    }
+    public static PosicaoXadrez LerPosicao()
+    {
+        string entrada = Console.ReadLine();
+        int linha = int.Parse(entrada[1] + "");
+        char coluna = entrada[0];
+        return new PosicaoXadrez(coluna, linha);
     }
 }

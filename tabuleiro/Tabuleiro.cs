@@ -23,14 +23,14 @@ namespace tabuleiro
             return pecas[pos.Linha, pos.Coluna];
         }
 
-        public bool Existepeca(Posicao pos)
+        public bool ExistePeca(Posicao pos)
         {
             ValidadorPosicao(pos);
             return peca(pos) != null;
         }
         public void ColocarPeca(Peca p, Posicao pos)
         {
-            if (Existepeca(pos))
+            if (ExistePeca(pos))
             {
                 throw new TabuleiroException("Já existe uma peça nessa posição!");
             }
@@ -40,7 +40,7 @@ namespace tabuleiro
 
         public Peca RetirarPeca(Posicao pos)
         {
-            if (Existepeca(pos))
+            if (!ExistePeca(pos))
             {
                 return null;
             }
