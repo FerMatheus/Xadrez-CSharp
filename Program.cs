@@ -11,9 +11,7 @@ public class Program
             try
             {
                 Console.Clear();
-                Tela.imprimirTabuleiro(partida.Tab);
-                Console.WriteLine($"\n\tTurno: {partida.Turno}");
-                Console.WriteLine($"Aguardando jogada: {partida.JogadorAtual}");
+                Tela.ImprimirPartida(partida);
 
                 Console.Write("\nDigite a posição de origem: ");
                 Posicao origem = Tela.LerPosicao().ToPosicao();

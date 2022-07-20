@@ -3,6 +3,32 @@ using xadrez;
 
 class Tela
 {
+    public static void ImprimirPartida(PartidaDeXadrez partida)
+    {
+        Tela.imprimirTabuleiro(partida.Tab);
+        Console.WriteLine();
+        ImprimirPecasCapturadas(partida);
+        Console.WriteLine($"\n\tTurno: {partida.Turno}");
+        Console.WriteLine($"Aguardando jogada: {partida.JogadorAtual}");
+    }
+
+    public static void ImprimirPecasCapturadas(PartidaDeXadrez partida)
+    {
+        Console.WriteLine("Peças Capturadas:");
+        Console.Write("Brancas:");
+        ImprimirConjunto(partida.PecasCapturadas(Cor.Branca));
+        Console.Write("Pretas:");
+        ImprimirConjunto(partida.PecasCapturadas(Cor.Preta));
+    }
+    public static void ImprimirConjunto(HashSet<Peca> conjunto)
+    {
+        Console.Write("[");
+        foreach (var peca in conjunto)
+        {
+            ImprimirPeca(peca);
+        }
+        Console.WriteLine("]");
+    }
     public static void imprimirTabuleiro(Tabuleiro tab)
     {
         for (int i = 0; i < tab.Linhas; i++)
