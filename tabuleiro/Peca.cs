@@ -19,9 +19,13 @@ namespace tabuleiro
             Cor = cor;
             qtdeMovimentos = 0;
         }
+        public void DecrementarMovimentos()
+        {
+            qtdeMovimentos--;
+        }
         public void IncrementarMovimentos()
         {
-            qtdeMovimentos = qtdeMovimentos + 1;
+            qtdeMovimentos++;
         }
 
         public bool ExisteMovimentoValido()
