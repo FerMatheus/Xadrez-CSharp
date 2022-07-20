@@ -10,12 +10,22 @@ public class Program
         {
             try
             {
+
                 Console.Clear();
                 Tela.ImprimirPartida(partida);
 
                 Console.Write("\nDigite a posição de origem: ");
                 Posicao origem = Tela.LerPosicao().ToPosicao();
-                partida.ValidaPosicaoOrigem(origem);
+                try
+                {
+                    partida.ValidaPosicaoOrigem(origem);
+                }
+                catch (TabuleiroException e)
+                {
+                    Console.WriteLine(e.Message);
+                    Thread.Sleep(2000);
+                    continue;
+                }
 
                 bool[,] movimentosPossiveis = partida.Tab.Peca(origem).MovimentosPossiveis();
 
@@ -24,16 +34,35 @@ public class Program
 
                 Console.Write("\nDigite a posição de destino: ");
                 Posicao destino = Tela.LerPosicao().ToPosicao();
-                partida.ValidarPosicaoDestino(origem, destino);
+                try
+                {
+                    partida.ValidarPosicaoDestino(origem, destino);
+                }
+                catch (TabuleiroException e)
+                {
+                    Console.WriteLine(e.Message);
+                    Thread.Sleep(2000);
+                    continue;
+                }
 
-                partida.RealizaJogada(origem, destino);
+                try
+                {
+                    partida.RealizaJogada(origem, destino);
+                }
+                catch (TabuleiroException e)
+                {
+                    Console.Write(e.Message);
+                    Thread.Sleep(2000);
+                }
             }
-            catch (TabuleiroException e)
+            catch (Exception e)
             {
-                Console.Write(e.Message);
+                Console.WriteLine(e.Message);
                 Thread.Sleep(2000);
             }
         }
+        Console.Clear();
+        Tela.ImprimirPartida(partida);
 
     }
 }
