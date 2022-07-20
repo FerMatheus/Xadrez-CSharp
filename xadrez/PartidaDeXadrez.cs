@@ -67,7 +67,7 @@ namespace xadrez
         {
             Tab.ValidadorPosicao(destino);
 
-            if (!Tab.Peca(origem).PodeMoverPara(destino))
+            if (!Tab.Peca(origem).MovimentoPossivel(destino))
             {
                 throw new TabuleiroException("Posição de destino é inválida!");
             }
