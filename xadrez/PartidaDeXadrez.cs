@@ -133,13 +133,8 @@ namespace xadrez
             // ColocarNovaPeca('e', 8, new Torre(Tab, Cor.Preta));
             // ColocarNovaPeca('d', 7, new Torre(Tab, Cor.Preta));
             // ColocarNovaPeca('d', 8, new Rei(Tab, Cor.Preta));
-            ColocarNovaPeca('a', 8, new Rei(Tab, Cor.Preta));
-            ColocarNovaPeca('b', 8, new Torre(Tab, Cor.Preta));
-            ColocarNovaPeca('d', 5, new Bispo(Tab, Cor.Branca));
+            ColocarNovaPeca('d', 5, new Dama(Tab, Cor.Branca));
 
-            ColocarNovaPeca('h', 7, new Torre(Tab, Cor.Branca));
-            ColocarNovaPeca('c', 1, new Torre(Tab, Cor.Branca));
-            ColocarNovaPeca('d', 1, new Rei(Tab, Cor.Branca));
         }
         public HashSet<Peca> PecasCapturadas(Cor cor)
         {
