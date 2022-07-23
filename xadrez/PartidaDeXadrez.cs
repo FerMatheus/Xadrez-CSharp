@@ -32,6 +32,23 @@ namespace xadrez
             {
                 capturadas.Add(pecaCapturada);
             }
+            // JogadaEspecial = roque
+            // Roque pequeno
+            if (p is Rei && origem.Coluna + 2 == destino.Coluna)
+            {
+                Posicao posTorre = new(origem.Linha, origem.Coluna + 3);
+                Peca torre = Tab.RetirarPeca(posTorre);
+                torre.IncrementarMovimentos();
+                Tab.ColocarPeca(torre, new(origem.Linha, origem.Coluna + 1));
+            }
+            // Roque longo
+            if (p is Rei && origem.Coluna - 2 == destino.Coluna)
+            {
+                Posicao posTorre = new(origem.Linha, origem.Coluna - 4);
+                Peca torre = Tab.RetirarPeca(posTorre);
+                torre.IncrementarMovimentos();
+                Tab.ColocarPeca(torre, new(origem.Linha, origem.Coluna - 1));
+            }
             return pecaCapturada;
         }
         private void DesfazMovimento(Posicao origem, Posicao destino, Peca pecaCapturada)
@@ -44,6 +61,23 @@ namespace xadrez
                 capturadas.Remove(pecaCapturada);
             }
             Tab.ColocarPeca(p, origem);
+            // Roque pequeno
+            if (p is Rei && origem.Coluna + 2 == destino.Coluna)
+            {
+                Posicao posTorre = new(origem.Linha, origem.Coluna + 3);
+                Peca torre = Tab.RetirarPeca(new(origem.Linha, origem.Coluna + 1));
+                torre.DecrementarMovimentos();
+                Tab.ColocarPeca(torre, posTorre);
+            }
+            // Roque longo
+            if (p is Rei && origem.Coluna - 2 == destino.Coluna)
+            {
+                Posicao posTorre = new(origem.Linha, origem.Coluna - 4);
+                Peca torre = Tab.RetirarPeca(new(origem.Linha, origem.Coluna - 1));
+                torre.IncrementarMovimentos();
+                Tab.ColocarPeca(torre, posTorre);
+            }
+
         }
 
         public void ValidaPosicaoOrigem(Posicao pos)
@@ -123,12 +157,12 @@ namespace xadrez
             // Brancas
             // Peças especiais
             ColocarNovaPeca('a', 1, new Torre(Tab, Cor.Branca));
-            // ColocarNovaPeca('b', 1, new Cavalo(Tab, Cor.Branca));
-            // ColocarNovaPeca('c', 1, new Bispo(Tab, Cor.Branca));
-            // ColocarNovaPeca('d', 1, new Dama(Tab, Cor.Branca));
+            ColocarNovaPeca('b', 1, new Cavalo(Tab, Cor.Branca));
+            ColocarNovaPeca('c', 1, new Bispo(Tab, Cor.Branca));
+            ColocarNovaPeca('d', 1, new Dama(Tab, Cor.Branca));
             ColocarNovaPeca('e', 1, new Rei(Tab, Cor.Branca, this));
-            // ColocarNovaPeca('f', 1, new Bispo(Tab, Cor.Branca));
-            // ColocarNovaPeca('g', 1, new Cavalo(Tab, Cor.Branca));
+            ColocarNovaPeca('f', 1, new Bispo(Tab, Cor.Branca));
+            ColocarNovaPeca('g', 1, new Cavalo(Tab, Cor.Branca));
             ColocarNovaPeca('h', 1, new Torre(Tab, Cor.Branca));
             // Peões
             ColocarNovaPeca('a', 2, new Peao(Tab, Cor.Branca));

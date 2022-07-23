@@ -85,7 +85,7 @@ namespace xadrez
                         movimentosPossiveis[Posicao.Linha, Posicao.Coluna + 2] = true;
                     }
                 }
-                //Rque Longo
+                //Roque Longo
                 Posicao posTorre2 = new(Posicao.Linha, Posicao.Coluna - 4);
                 if (TesteTorreRoque(posTorre2))
                 {
